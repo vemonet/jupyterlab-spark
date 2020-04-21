@@ -1,2 +1,7 @@
+pandas-datareader
+tqdm
 rdflib
 SPARQLWrapper
+dipper
+networkx
+cwlref-runner

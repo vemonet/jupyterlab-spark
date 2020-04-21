@@ -7,7 +7,7 @@ RUN git clone --depth=1 https://github.com/Bash-it/bash-it.git ~/.bash_it && \
 
 RUN curl -sL https://deb.nodesource.com/setup_12.x | bash - && \
   apt-get upgrade -y && \
-  apt-get install -y nodejs texlive-latex-extra texlive-xetex vim && \
+  apt-get install -y nodejs texlive-latex-extra texlive-xetex vim raptor2-utils && \
   rm -rf /var/lib/apt/lists/*
 
 USER $NB_UID
