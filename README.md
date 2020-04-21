@@ -22,10 +22,10 @@ docker run --rm -it -p 8888:8888 -e JUPYTER_ENABLE_LAB=yes -v $(pwd):/home/jovya
 
 > Use `${pwd}` for Windows current directory.
 
-Define your own password
+Define your own password (the sha provided in the example correspond to the password `test`)
 
 ```bash
-docker run --rm -it -p 8888:8888 -e JUPYTER_ENABLE_LAB=yes umids/jupyterlab-spark start-notebook.sh  --NotebookApp.password='sha1:sha1:a94f10a69978:993d70846f179b3d5ccea63d057d923e8846300e'
+docker run --rm -it -p 8888:8888 -e JUPYTER_ENABLE_LAB=yes umids/jupyterlab-spark start-notebook.sh  --NotebookApp.password='sha1:9316432938f9:93985dffbb854d31308dfe0602a51db947fb7d80'
 ```
 
 > Generate a hash for your password in a Notebook by running
