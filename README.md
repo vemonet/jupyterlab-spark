@@ -25,7 +25,7 @@ docker run --rm -it -p 8888:8888 -e JUPYTER_ENABLE_LAB=yes -v $(pwd):/home/jovya
 Define your own password
 
 ```bash
-docker run --rm -it -p 8888:8888 -e JUPYTER_ENABLE_LAB=yes umids/jupyterlab-spark start-notebook.sh  --NotebookApp.password='sha1:HASH1:HASH2'
+docker run --rm -it -p 8888:8888 -e JUPYTER_ENABLE_LAB=yes umids/jupyterlab-spark start-notebook.sh  --NotebookApp.password='sha1:sha1:a94f10a69978:993d70846f179b3d5ccea63d057d923e8846300e'
 ```
 
 > Generate a hash for your password in a Notebook by running
@@ -66,3 +66,7 @@ Use the `requirements.txt` file to add packages to be installed at build.
 - [@bokeh/jupyter_bokeh](https://github.com/bokeh/jupyter_bokeh)
 - [@jupyterlab/toc](https://www.npmjs.com/package/@jupyterlab/toc)
 - [@jupyterlab/git](https://www.npmjs.com/package/@jupyterlab/git)
+
+## Acknowledgments
+
+Alexander Malic for his [amalic/Jupyterlab](https://github.com/amalic/Jupyterlab) used as basis for this build.
