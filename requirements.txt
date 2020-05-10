@@ -3,6 +3,5 @@ tqdm
 rdflib
 SPARQLWrapper
 networkx
-dipper
 biothings
 cwlref-runner

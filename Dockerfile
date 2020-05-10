@@ -14,7 +14,9 @@ USER $NB_UID
 
 RUN pip install --upgrade pip && \
   pip install --upgrade \
-    jupyterlab==1.2.6 \
+    jupyterlab>=2.0.0 \
+    jedi==0.15.2 \ 
+    # jupyterlab-lsp does not support 0.17
     pyspark \
     findspark \
     networkx \
@@ -43,18 +45,17 @@ RUN pip install --upgrade pip && \
     ipython \
     sympy \
     nose \
+    jupyter-lsp \
+    python-language-server \
     jupyterlab-git && \
   jupyter labextension install \
     @jupyter-widgets/jupyterlab-manager \
     @jupyterlab/latex \
     jupyterlab-drawio \ 
-    #https://github.com/QuantStack/jupyterlab-drawio/issues/54
     jupyterlab-plotly \
     @bokeh/jupyter_bokeh \
+    @krassowski/jupyterlab-lsp \
     @jupyterlab/git \
-    # https://github.com/jupyterlab/jupyterlab-git/pull/520
-    @mflevine/jupyterlab_html \
-    # ^to be removed at 2.0.1, now integrated
     jupyterlab-spreadsheet 
 
 COPY requirements.txt .
