@@ -1,5 +1,6 @@
 FROM jupyter/all-spark-notebook
 
+ENV JUPYTER_ENABLE_LAB=yes
 USER root
 
 RUN git clone --depth=1 https://github.com/Bash-it/bash-it.git ~/.bash_it && \
@@ -47,8 +48,9 @@ RUN pip install --upgrade pip && \
     nose \
     jupyter-lsp \
     python-language-server \
-    jupyterlab-git && \
-  jupyter labextension install \
+    jupyterlab-git
+
+  RUN jupyter labextension install \
     @jupyter-widgets/jupyterlab-manager \
     @jupyterlab/latex \
     jupyterlab-drawio \ 
@@ -56,7 +58,8 @@ RUN pip install --upgrade pip && \
     @bokeh/jupyter_bokeh \
     @krassowski/jupyterlab-lsp \
     @jupyterlab/git \
-    jupyterlab-spreadsheet 
+    jupyterlab-spreadsheet \
+    nbdime
 
 COPY requirements.txt .
 RUN pip install -r requirements.txt
