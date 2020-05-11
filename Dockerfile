@@ -15,7 +15,7 @@ USER $NB_UID
 
 RUN pip install --upgrade pip && \
   pip install --upgrade \
-    jupyterlab>=2.0.0 \
+    jupyterlab>=2.0 \
     jedi==0.15.2 \ 
     # jupyterlab-lsp does not support 0.17
     pyspark \
@@ -58,8 +58,7 @@ RUN pip install --upgrade pip && \
     @bokeh/jupyter_bokeh \
     @krassowski/jupyterlab-lsp \
     @jupyterlab/git \
-    jupyterlab-spreadsheet \
-    nbdime
+    jupyterlab-spreadsheet 
 
 COPY requirements.txt .
 RUN pip install -r requirements.txt

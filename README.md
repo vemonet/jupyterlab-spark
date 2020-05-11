@@ -1,4 +1,4 @@
-Run all Spark Jupyterlab notebooks.
+Run Spark Jupyterlab from [jupyter/all-spark-notebook](https://github.com/jupyter/docker-stacks/tree/master/all-spark-notebook).
 
 ## Pull
 
@@ -14,7 +14,7 @@ docker run --rm -it -p 8888:8888 umids/jupyterlab-spark
 
 > Notebooks workspace at `/home/jovyan` in the container.
 
-Share volume:
+Share current folder:
 
 ```bash
 docker run --rm -it -p 8888:8888 -v $(pwd):/home/jovyan umids/jupyterlab-spark
@@ -38,7 +38,7 @@ docker run --rm -it -p 8888:8888 umids/jupyterlab-spark start-notebook.sh  --Not
 Run as root:
 
 ```bash
-docker run --rm -it -p 8888:8888 -e GRANT_SUDO=yes --user root umids/jupyterlab-spark start-notebook.sh  --NotebookApp.password='sha1:HASH1:HASH2'
+docker run --rm -it -p 8888:8888 -e GRANT_SUDO=yes --user root umids/jupyterlab-spark start-notebook.sh  --NotebookApp.password='sha1:9316432938f9:93985dffbb854d31308dfe0602a51db947fb7d80'
 ```
 
 Limit memory and CPU usage:
@@ -55,7 +55,7 @@ docker build -t umids/jupyterlab-spark .
 
 Use the `requirements.txt` file to add packages to be installed at build.
 
-## Installed Jupyterlab extensions
+## Installed JupyterLab extensions
 
 - [Jupyter Widgets](https://ipywidgets.readthedocs.io/en/latest/examples/Widget%20Basics.html)
 - [@jupyterlab/latex](https://github.com/jupyterlab/jupyterlab-latex)
