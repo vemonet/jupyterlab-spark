@@ -4,4 +4,5 @@ rdflib
 SPARQLWrapper
 networkx
 biothings
-cwlref-runner
+cwltool
+papermill
