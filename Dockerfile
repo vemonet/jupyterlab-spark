@@ -13,7 +13,7 @@ RUN curl -sL https://deb.nodesource.com/setup_12.x | bash - && \
     wget curl vim raptor2-utils && \
   rm -rf /var/lib/apt/lists/*
 
-USER $NB_UID
+# USER $NB_UID
 
 RUN pip install --upgrade pip && \
   pip install --upgrade \
@@ -66,3 +66,6 @@ COPY requirements.txt .
 RUN pip install -r requirements.txt
 
 COPY config/ /home/$NB_USER/.jupyter/
+
+# Make sure we login as root
+RUN userdel jovyan
