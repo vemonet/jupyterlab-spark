@@ -66,7 +66,3 @@ COPY requirements.txt .
 RUN pip install -r requirements.txt
 
 COPY config/ /home/$NB_USER/.jupyter/
-
-# Make sure we login as root
-USER root
-RUN userdel jovyan
