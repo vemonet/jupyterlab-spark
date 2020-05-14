@@ -17,8 +17,8 @@ USER $NB_UID
 
 RUN pip install --upgrade pip && \
   pip install --upgrade \
-    jupyterlab>=2.0 \
-    jedi==0.15.2 \ 
+    'jupyterlab>=2.0' \
+    'jedi==0.17.0' \ 
     # jupyterlab-lsp does not support 0.17
     pyspark \
     findspark \
@@ -66,3 +66,7 @@ COPY requirements.txt .
 RUN pip install -r requirements.txt
 
 COPY config/ /home/$NB_USER/.jupyter/
+
+# Make sure we login as root
+USER root
+RUN userdel jovyan

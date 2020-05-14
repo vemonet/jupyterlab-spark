@@ -55,6 +55,14 @@ docker build -t umids/jupyterlab-spark .
 
 Use the `requirements.txt` file to add packages to be installed at build.
 
+Build as root user:
+
+```bash
+docker build --build-arg NB_USER=root --build-arg NB_UID=0 --build-arg NB_GID=0 -t umids/jupyterlab-spark:root .
+
+# jovyan 1000:100
+```
+
 ## Installed JupyterLab extensions
 
 - [Jupyter Widgets](https://ipywidgets.readthedocs.io/en/latest/examples/Widget%20Basics.html)
