@@ -1,11 +1,4 @@
-ARG NB_USER="jovyan"
-ARG NB_UID="1000"
-ARG NB_GID="100"
 FROM jupyter/all-spark-notebook
-
-ARG NB_USER="jovyan"
-ARG NB_UID="1000"
-ARG NB_GID="100"
 
 ENV JUPYTER_ENABLE_LAB=yes
 USER root
@@ -22,7 +15,7 @@ RUN curl -sL https://deb.nodesource.com/setup_12.x | bash - && \
 
 USER $NB_UID
 
-RUN pip install --upgrade pip
+RUN python -m pip install --upgrade pip
 
 COPY requirements.txt .
 RUN pip install --upgrade -r requirements.txt
