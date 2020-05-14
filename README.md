@@ -50,17 +50,28 @@ docker run --rm -it -p 8888:8888 --memory=128g --cpus=24 umids/jupyterlab-spark
 ## Build from source
 
 ```bash
-docker build -t umids/jupyterlab-spark .
+docker build -t umids/jupyterlab-spark:latest .
 ```
 
 Use the `requirements.txt` file to add packages to be installed at build.
 
-This command should build and run with `root` user but does not work:
+## Run as root in Kubernetes
 
-```bash
-docker build --build-arg NB_USER=root --build-arg NB_UID=0 --build-arg NB_GID=0 -t umids/jupyterlab-spark:root .
-
-# jovyan uid:gid = 1000:100
+```yaml
+containers:
+  - name: jupyter
+    image: ${JUPYTER_IMAGE}
+    securityContext:
+      runAsUser: 0
+    env:
+    - name: GRANT_SUDO
+      value: "yes"
+    - name: JUPYTER_ENABLE_LAB
+      value: ${JUPYTER_ENABLE_LAB} 
+    command:
+      - /usr/local/bin/start-notebook.sh
+    args:
+      - "--NotebookApp.password='${NOTEBOOK_PASSWORD}'"
 ```
 
 ## Installed JupyterLab extensions
