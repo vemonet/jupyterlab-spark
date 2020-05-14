@@ -1,4 +1,11 @@
+ARG NB_USER="jovyan"
+ARG NB_UID="1000"
+ARG NB_GID="100"
 FROM jupyter/all-spark-notebook
+
+ARG NB_USER="jovyan"
+ARG NB_UID="1000"
+ARG NB_GID="100"
 
 ENV JUPYTER_ENABLE_LAB=yes
 USER root
