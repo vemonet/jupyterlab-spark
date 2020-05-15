@@ -13,6 +13,8 @@ RUN curl -sL https://deb.nodesource.com/setup_12.x | bash - && \
     wget curl vim raptor2-utils && \
   rm -rf /var/lib/apt/lists/*
 
+RUN wget -O /home/$NB_USER/rmlmapper.jar https://github.com/RMLio/rmlmapper-java/releases/download/v4.7.0/rmlmapper-4.7.0-r150.jar
+
 USER $NB_UID
 
 RUN python -m pip install --upgrade pip
