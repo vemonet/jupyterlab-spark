@@ -14,7 +14,6 @@ tensorflow
 joblib
 matplotlib
 mlxtend
-rdflib
 xgboost
 seaborn
 ipywidgets
@@ -32,9 +31,9 @@ nose
 jupyter-lsp
 python-language-server
 jupyterlab-git
+tqdm
 
 pandas-datareader
-tqdm
 rdflib
 SPARQLWrapper
 networkx
