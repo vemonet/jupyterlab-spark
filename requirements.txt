@@ -39,5 +39,7 @@ rdflib
 SPARQLWrapper
 networkx
 biothings
+biothings-explorer
+dipper
 cwltool
 papermill
